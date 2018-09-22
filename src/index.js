@@ -1,5 +1,12 @@
-const sum = require('./sum');
 
-const total = sum(10, 5);
+const button = document.createElement('button');
 
-console.log(total);
+button.innerText = 'Click me!';
+
+button.onclick = () => {
+  System.import('./image_viewer').then(module => {
+    module.default();
+  })
+};
+
+document.body.appendChild(button);
